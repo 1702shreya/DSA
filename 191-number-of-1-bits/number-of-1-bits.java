@@ -1,14 +1,9 @@
 class Solution {
     public int hammingWeight(int n) {
-        String binary=Integer.toBinaryString(n);
-        int c=0;
-        for(int i=0;i<binary.length();i++)
-        {
-            if(binary.charAt(i)=='1')
-            {
-                c++;
-            }
+        if (n==0) {
+            return 0;
         }
-        return c;
+        int out = hammingWeight(n/2) + (n % 2);        
+        return out;
     }
 }
